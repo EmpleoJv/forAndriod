@@ -1,0 +1,32 @@
+Variables
+
+    	Button button;
+    	EditText editTextTextPersonName, editTextTextPassword;
+
+setGetID
+
+        button = (Button) findViewById(R.id.button);
+        editTextTextPersonName = (EditText) findViewById(R.id.editTextTextPersonName);
+        editTextTextPassword = (EditText) findViewById(R.id.editTextTextPassword);
+
+OnclickListener
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user = editTextTextPersonName.getText().toString();
+                String password = editTextTextPassword.getText().toString();
+                if(user.equals("jv") && password.equals("jv")){
+                    click();
+                }else{
+                    Toast.makeText(MainActivity2.this, "Wrong Input", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+Void 
+
+	public void click(){
+        	Intent intent = new Intent(this, MainActivity.class);
+        	startActivity(intent);
+    	}
